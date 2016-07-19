@@ -13,6 +13,7 @@
 		2AB6CD261D3E5C0900DD6F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB6CD251D3E5C0900DD6F1D /* Assets.xcassets */; };
 		2AB6CD291D3E5C0900DD6F1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB6CD271D3E5C0900DD6F1D /* LaunchScreen.storyboard */; };
 		2AB6CD341D3E5C0900DD6F1D /* IamNPCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6CD331D3E5C0900DD6F1D /* IamNPCTests.swift */; };
+		4C0887F6E08373DA5B284C2C /* Pods_IamNPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC51DCFA5B496C056974FE3 /* Pods_IamNPC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		2AB6CD2F1D3E5C0900DD6F1D /* IamNPCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IamNPCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB6CD331D3E5C0900DD6F1D /* IamNPCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IamNPCTests.swift; sourceTree = "<group>"; };
 		2AB6CD351D3E5C0900DD6F1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		396BD1800AD91978C947BF9C /* Pods-IamNPC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IamNPC.release.xcconfig"; path = "Pods/Target Support Files/Pods-IamNPC/Pods-IamNPC.release.xcconfig"; sourceTree = "<group>"; };
+		60BCD124A7B734859672E473 /* Pods-IamNPC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IamNPC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IamNPC/Pods-IamNPC.debug.xcconfig"; sourceTree = "<group>"; };
+		CDC51DCFA5B496C056974FE3 /* Pods_IamNPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IamNPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C0887F6E08373DA5B284C2C /* Pods_IamNPC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05DAFEB99771090F9492D5F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDC51DCFA5B496C056974FE3 /* Pods_IamNPC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2AB6CD121D3E5C0900DD6F1D = {
 			isa = PBXGroup;
 			children = (
 				2AB6CD1D1D3E5C0900DD6F1D /* IamNPC */,
 				2AB6CD321D3E5C0900DD6F1D /* IamNPCTests */,
 				2AB6CD1C1D3E5C0900DD6F1D /* Products */,
+				BC64DA63D57002B084911467 /* Pods */,
+				05DAFEB99771090F9492D5F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +92,11 @@
 		2AB6CD1D1D3E5C0900DD6F1D /* IamNPC */ = {
 			isa = PBXGroup;
 			children = (
-				2AB6CD1E1D3E5C0900DD6F1D /* AppDelegate.swift */,
-				2AB6CD201D3E5C0900DD6F1D /* ViewController.swift */,
-				2AB6CD221D3E5C0900DD6F1D /* Main.storyboard */,
+				2AB8C3F01D3E775B006B4535 /* Application */,
+				2AB8C3EE1D3E7718006B4535 /* Controller */,
+				2AB8C3EF1D3E772F006B4535 /* Model */,
+				2AB8C3F11D3E777F006B4535 /* StoryBoard */,
 				2AB6CD251D3E5C0900DD6F1D /* Assets.xcassets */,
-				2AB6CD271D3E5C0900DD6F1D /* LaunchScreen.storyboard */,
 				2AB6CD2A1D3E5C0900DD6F1D /* Info.plist */,
 			);
 			path = IamNPC;
@@ -96,6 +111,71 @@
 			path = IamNPCTests;
 			sourceTree = "<group>";
 		};
+		2AB8C3EE1D3E7718006B4535 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2AB8C3F41D3E77FB006B4535 /* Root */,
+				2AB8C3F31D3E77B3006B4535 /* Task */,
+				2AB8C3F21D3E77AF006B4535 /* PersonCenter */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		2AB8C3EF1D3E772F006B4535 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2AB8C3F01D3E775B006B4535 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2AB6CD1E1D3E5C0900DD6F1D /* AppDelegate.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		2AB8C3F11D3E777F006B4535 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2AB6CD221D3E5C0900DD6F1D /* Main.storyboard */,
+				2AB6CD271D3E5C0900DD6F1D /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoard;
+			sourceTree = "<group>";
+		};
+		2AB8C3F21D3E77AF006B4535 /* PersonCenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PersonCenter;
+			sourceTree = "<group>";
+		};
+		2AB8C3F31D3E77B3006B4535 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		2AB8C3F41D3E77FB006B4535 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				2AB6CD201D3E5C0900DD6F1D /* ViewController.swift */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
+		BC64DA63D57002B084911467 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60BCD124A7B734859672E473 /* Pods-IamNPC.debug.xcconfig */,
+				396BD1800AD91978C947BF9C /* Pods-IamNPC.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +183,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AB6CD381D3E5C0900DD6F1D /* Build configuration list for PBXNativeTarget "IamNPC" */;
 			buildPhases = (
+				A5DF8569BB8FC809A88B98BD /* Check Pods Manifest.lock */,
 				2AB6CD171D3E5C0900DD6F1D /* Sources */,
 				2AB6CD181D3E5C0900DD6F1D /* Frameworks */,
 				2AB6CD191D3E5C0900DD6F1D /* Resources */,
+				30151449C5FC8BAB94A39461 /* Embed Pods Frameworks */,
+				9D378F8A3EBFD83E2F46CC1D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +275,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30151449C5FC8BAB94A39461 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IamNPC/Pods-IamNPC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D378F8A3EBFD83E2F46CC1D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IamNPC/Pods-IamNPC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5DF8569BB8FC809A88B98BD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2AB6CD171D3E5C0900DD6F1D /* Sources */ = {
@@ -326,11 +457,13 @@
 		};
 		2AB6CD391D3E5C0900DD6F1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60BCD124A7B734859672E473 /* Pods-IamNPC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = IamNPC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orangeince.IamNPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,11 +473,13 @@
 		};
 		2AB6CD3A1D3E5C0900DD6F1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 396BD1800AD91978C947BF9C /* Pods-IamNPC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = IamNPC/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.orangeince.IamNPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -395,6 +530,7 @@
 				2AB6CD3A1D3E5C0900DD6F1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2AB6CD3B1D3E5C0900DD6F1D /* Build configuration list for PBXNativeTarget "IamNPCTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +539,7 @@
 				2AB6CD3D1D3E5C0900DD6F1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
