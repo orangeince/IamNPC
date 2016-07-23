@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         )
         Realm.Configuration.defaultConfiguration = config
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.makeKeyAndVisible()
+        
+        setRoot()
+        
         return true
     }
 
@@ -47,6 +53,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func setRoot() {
+        let tabBC = UITabBarController()
+        UITabBar.appearance().tintColor = purpleColor
+        
+        
+        let todoVC = npcViewController(.ToDo, identifier: "ToDoListViewController") as! ToDoListViewController
+        //let todoNav = ImNNavigationController(rootViewController: todoVC)
+        let todoNav = npcViewController(.Main, identifier: "ImNNavigationController") as! ImNNavigationController
+        todoNav.setViewControllers([todoVC], animated: false)
+        todoNav.title = "Todo"
+        todoNav.tabBarItem.image = UIImage(named: "tabbar_todo")
+        todoNav.tabBarItem.selectedImage = UIImage(named: "tabbar_todo_filled")
+        
+        let taskPoolVC = npcViewController(.TaskPool, identifier: "TaskPoolViewController") as! TaskPoolViewController
+        //let taskPoolNav = ImNNavigationController(rootViewController: taskPoolVC)
+        let taskPoolNav = npcViewController(.Main, identifier: "ImNNavigationController") as! ImNNavigationController
+        taskPoolNav.setViewControllers([taskPoolVC], animated: false)
+        taskPoolNav.title = "TaskPool"
+        taskPoolNav.tabBarItem.image = UIImage(named: "tabbar_taskpool")
+        taskPoolNav.tabBarItem.selectedImage = UIImage(named: "tabbar_taskpool_filled")
+        
+        let walletVC = npcViewController(.Wallet, identifier: "WalletViewController") as! WalletViewController
+        //let walletNav = ImNNavigationController(rootViewController: walletVC)
+        let walletNav = npcViewController(.Main, identifier: "ImNNavigationController") as! ImNNavigationController
+        walletNav.setViewControllers([walletVC], animated: false)
+        walletNav.title = "Wallet"
+        walletNav.tabBarItem.image = UIImage(named: "tabbar_wallet")
+        walletNav.tabBarItem.selectedImage = UIImage(named: "tabbar_wallet_filled")
+        
+        tabBC.setViewControllers([todoNav, taskPoolNav, walletNav], animated: false)
+        window?.rootViewController = tabBC
+        
     }
 
 
