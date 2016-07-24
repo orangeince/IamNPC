@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A51FA0C1D43636F00001DD5 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A51FA0B1D43636F00001DD5 /* ToDo.storyboard */; };
-		2A51FA0E1D43637E00001DD5 /* TaskPool.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A51FA0D1D43637E00001DD5 /* TaskPool.storyboard */; };
+		2A51FA0E1D43637E00001DD5 /* NPC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A51FA0D1D43637E00001DD5 /* NPC.storyboard */; };
 		2A51FA101D43638F00001DD5 /* Wallet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A51FA0F1D43638F00001DD5 /* Wallet.storyboard */; };
 		2A51FA121D43649A00001DD5 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA111D43649A00001DD5 /* AppConfig.swift */; };
 		2A51FA141D43675C00001DD5 /* ImNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA131D43675C00001DD5 /* ImNNavigationController.swift */; };
@@ -16,6 +16,16 @@
 		2A51FA191D4370ED00001DD5 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA181D4370ED00001DD5 /* ToDoListViewController.swift */; };
 		2A51FA1B1D43715F00001DD5 /* TaskPoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA1A1D43715F00001DD5 /* TaskPoolViewController.swift */; };
 		2A51FA1D1D4371D400001DD5 /* WalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA1C1D4371D400001DD5 /* WalletViewController.swift */; };
+		2A51FA211D43C17300001DD5 /* TimeDescriptionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA201D43C17300001DD5 /* TimeDescriptionHeaderView.swift */; };
+		2A51FA231D43C19900001DD5 /* TimeDescriptionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A51FA221D43C19900001DD5 /* TimeDescriptionHeaderView.xib */; };
+		2A51FA261D43C62500001DD5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA251D43C62500001DD5 /* Extensions.swift */; };
+		2A51FA291D44914E00001DD5 /* ToDoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA281D44914E00001DD5 /* ToDoEditViewController.swift */; };
+		2A51FA2C1D44970700001DD5 /* npcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA2B1D44970700001DD5 /* npcTableViewController.swift */; };
+		2A51FA2E1D449A2C00001DD5 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA2D1D449A2C00001DD5 /* Task.swift */; };
+		2A51FA301D449E0300001DD5 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA2F1D449E0300001DD5 /* ToDo.swift */; };
+		2A51FA321D44B2D200001DD5 /* TaskNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA311D44B2D200001DD5 /* TaskNewViewController.swift */; };
+		2A51FA341D44C0F900001DD5 /* ThirdLibExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA331D44C0F900001DD5 /* ThirdLibExtensions.swift */; };
+		2A51FA371D44DEA000001DD5 /* NPCListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51FA361D44DEA000001DD5 /* NPCListViewController.swift */; };
 		2AB6CD1F1D3E5C0900DD6F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6CD1E1D3E5C0900DD6F1D /* AppDelegate.swift */; };
 		2AB6CD211D3E5C0900DD6F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6CD201D3E5C0900DD6F1D /* ViewController.swift */; };
 		2AB6CD241D3E5C0900DD6F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AB6CD221D3E5C0900DD6F1D /* Main.storyboard */; };
@@ -37,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		2A51FA0B1D43636F00001DD5 /* ToDo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToDo.storyboard; sourceTree = "<group>"; };
-		2A51FA0D1D43637E00001DD5 /* TaskPool.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TaskPool.storyboard; sourceTree = "<group>"; };
+		2A51FA0D1D43637E00001DD5 /* NPC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NPC.storyboard; sourceTree = "<group>"; };
 		2A51FA0F1D43638F00001DD5 /* Wallet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wallet.storyboard; sourceTree = "<group>"; };
 		2A51FA111D43649A00001DD5 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		2A51FA131D43675C00001DD5 /* ImNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImNNavigationController.swift; sourceTree = "<group>"; };
@@ -45,6 +55,16 @@
 		2A51FA181D4370ED00001DD5 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDoListViewController.swift; path = ToDo/ToDoListViewController.swift; sourceTree = "<group>"; };
 		2A51FA1A1D43715F00001DD5 /* TaskPoolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskPoolViewController.swift; path = TaskPool/TaskPoolViewController.swift; sourceTree = "<group>"; };
 		2A51FA1C1D4371D400001DD5 /* WalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletViewController.swift; sourceTree = "<group>"; };
+		2A51FA201D43C17300001DD5 /* TimeDescriptionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDescriptionHeaderView.swift; sourceTree = "<group>"; };
+		2A51FA221D43C19900001DD5 /* TimeDescriptionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeDescriptionHeaderView.xib; sourceTree = "<group>"; };
+		2A51FA251D43C62500001DD5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2A51FA281D44914E00001DD5 /* ToDoEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoEditViewController.swift; sourceTree = "<group>"; };
+		2A51FA2B1D44970700001DD5 /* npcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = npcTableViewController.swift; path = Controller/npcTableViewController.swift; sourceTree = "<group>"; };
+		2A51FA2D1D449A2C00001DD5 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Model/Task.swift; sourceTree = "<group>"; };
+		2A51FA2F1D449E0300001DD5 /* ToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToDo.swift; path = Model/ToDo.swift; sourceTree = "<group>"; };
+		2A51FA311D44B2D200001DD5 /* TaskNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskNewViewController.swift; path = Controller/ToDo/TaskNewViewController.swift; sourceTree = "<group>"; };
+		2A51FA331D44C0F900001DD5 /* ThirdLibExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdLibExtensions.swift; sourceTree = "<group>"; };
+		2A51FA361D44DEA000001DD5 /* NPCListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NPCListViewController.swift; path = Controller/NPC/NPCListViewController.swift; sourceTree = "<group>"; };
 		2AB6CD1B1D3E5C0900DD6F1D /* IamNPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IamNPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB6CD1E1D3E5C0900DD6F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2AB6CD201D3E5C0900DD6F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				2A51FA181D4370ED00001DD5 /* ToDoListViewController.swift */,
+				2A51FA281D44914E00001DD5 /* ToDoEditViewController.swift */,
+				2A51FA311D44B2D200001DD5 /* TaskNewViewController.swift */,
 			);
 			name = ToDo;
 			sourceTree = "<group>";
@@ -101,6 +123,56 @@
 				2A51FA161D436DAB00001DD5 /* Constants.swift */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		2A51FA1E1D43C0B900001DD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2A51FA1F1D43C0E300001DD5 /* Views */,
+				2AB8C3F11D3E777F006B4535 /* StoryBoard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		2A51FA1F1D43C0E300001DD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A51FA271D4462F800001DD5 /* Components */,
+				2A51FA241D43C1A200001DD5 /* ToDo */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		2A51FA241D43C1A200001DD5 /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ToDo;
+			sourceTree = "<group>";
+		};
+		2A51FA271D4462F800001DD5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A51FA201D43C17300001DD5 /* TimeDescriptionHeaderView.swift */,
+				2A51FA221D43C19900001DD5 /* TimeDescriptionHeaderView.xib */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		2A51FA2A1D4496DC00001DD5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2A51FA2B1D44970700001DD5 /* npcTableViewController.swift */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		2A51FA351D44DE5D00001DD5 /* NPC */ = {
+			isa = PBXGroup;
+			children = (
+				2A51FA361D44DEA000001DD5 /* NPCListViewController.swift */,
+			);
+			name = NPC;
 			sourceTree = "<group>";
 		};
 		2AB6CD121D3E5C0900DD6F1D = {
@@ -129,8 +201,8 @@
 				2AB8C3F01D3E775B006B4535 /* Application */,
 				2AB8C3EE1D3E7718006B4535 /* Controller */,
 				2AB8C3EF1D3E772F006B4535 /* Model */,
+				2A51FA1E1D43C0B900001DD5 /* View */,
 				2A51FA151D436D8700001DD5 /* General */,
-				2AB8C3F11D3E777F006B4535 /* StoryBoard */,
 				2AB6CD251D3E5C0900DD6F1D /* Assets.xcassets */,
 				2AB6CD2A1D3E5C0900DD6F1D /* Info.plist */,
 			);
@@ -149,8 +221,10 @@
 		2AB8C3EE1D3E7718006B4535 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2A51FA2A1D4496DC00001DD5 /* Components */,
 				2AB8C3F41D3E77FB006B4535 /* Root */,
 				2A51FA0A1D43630600001DD5 /* ToDo */,
+				2A51FA351D44DE5D00001DD5 /* NPC */,
 				2AB8C3F31D3E77B3006B4535 /* TaskPool */,
 				2AB8C3F21D3E77AF006B4535 /* Wallet */,
 			);
@@ -160,6 +234,8 @@
 		2AB8C3EF1D3E772F006B4535 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A51FA2D1D449A2C00001DD5 /* Task.swift */,
+				2A51FA2F1D449E0300001DD5 /* ToDo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -169,6 +245,8 @@
 			children = (
 				2AB6CD1E1D3E5C0900DD6F1D /* AppDelegate.swift */,
 				2A51FA111D43649A00001DD5 /* AppConfig.swift */,
+				2A51FA251D43C62500001DD5 /* Extensions.swift */,
+				2A51FA331D44C0F900001DD5 /* ThirdLibExtensions.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -179,7 +257,7 @@
 				2AB6CD221D3E5C0900DD6F1D /* Main.storyboard */,
 				2AB6CD271D3E5C0900DD6F1D /* LaunchScreen.storyboard */,
 				2A51FA0B1D43636F00001DD5 /* ToDo.storyboard */,
-				2A51FA0D1D43637E00001DD5 /* TaskPool.storyboard */,
+				2A51FA0D1D43637E00001DD5 /* NPC.storyboard */,
 				2A51FA0F1D43638F00001DD5 /* Wallet.storyboard */,
 			);
 			name = StoryBoard;
@@ -304,7 +382,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A51FA0E1D43637E00001DD5 /* TaskPool.storyboard in Resources */,
+				2A51FA0E1D43637E00001DD5 /* NPC.storyboard in Resources */,
+				2A51FA231D43C19900001DD5 /* TimeDescriptionHeaderView.xib in Resources */,
 				2A51FA0C1D43636F00001DD5 /* ToDo.storyboard in Resources */,
 				2AB6CD291D3E5C0900DD6F1D /* LaunchScreen.storyboard in Resources */,
 				2A51FA101D43638F00001DD5 /* Wallet.storyboard in Resources */,
@@ -375,14 +454,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A51FA211D43C17300001DD5 /* TimeDescriptionHeaderView.swift in Sources */,
+				2A51FA301D449E0300001DD5 /* ToDo.swift in Sources */,
 				2A51FA171D436DAB00001DD5 /* Constants.swift in Sources */,
+				2A51FA291D44914E00001DD5 /* ToDoEditViewController.swift in Sources */,
+				2A51FA321D44B2D200001DD5 /* TaskNewViewController.swift in Sources */,
+				2A51FA341D44C0F900001DD5 /* ThirdLibExtensions.swift in Sources */,
 				2A51FA141D43675C00001DD5 /* ImNNavigationController.swift in Sources */,
 				2A51FA121D43649A00001DD5 /* AppConfig.swift in Sources */,
 				2A51FA1B1D43715F00001DD5 /* TaskPoolViewController.swift in Sources */,
+				2A51FA261D43C62500001DD5 /* Extensions.swift in Sources */,
 				2AB6CD211D3E5C0900DD6F1D /* ViewController.swift in Sources */,
+				2A51FA2E1D449A2C00001DD5 /* Task.swift in Sources */,
+				2A51FA371D44DEA000001DD5 /* NPCListViewController.swift in Sources */,
 				2A51FA1D1D4371D400001DD5 /* WalletViewController.swift in Sources */,
 				2A51FA191D4370ED00001DD5 /* ToDoListViewController.swift in Sources */,
 				2AB6CD1F1D3E5C0900DD6F1D /* AppDelegate.swift in Sources */,
+				2A51FA2C1D44970700001DD5 /* npcTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

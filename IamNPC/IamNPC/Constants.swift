@@ -18,3 +18,37 @@ let MainScreen = UIScreen.mainScreen()
 let DefaultNotificationCenter = NSNotificationCenter.defaultCenter()
 
 let purpleColor = UIColor(red: 244/255, green: 11/255, blue: 153/255, alpha: 1)
+
+func getCurrentTime() -> NSDateComponents {
+    let calendar = NSCalendar.currentCalendar()
+    return calendar.components([.Year, .Month, .Day, .Minute, .Second, .Weekday], fromDate: NSDate())
+}
+
+func weekDayFor(day: Int) -> String {
+    switch day {
+    case 1:
+        return "星期日"
+    case 2:
+        return "星期一"
+    case 3:
+        return "星期二"
+    case 4:
+        return "星期三"
+    case 5:
+        return "星期四"
+    case 6:
+        return "星期五"
+    case 7:
+        return "星期六"
+    default:
+        return "未知"
+    }
+}
+
+
+// MARK: Colors
+//rgb(1, 200, 155) 绿色，配白色好看
+//rgb(210, 65, 33) 橘红，配白色
+//rgb(96, 81, 70) 浅咖啡色，配白色
+//rgb(48, 205, 193) 青蓝色，配白色
+//rgb(18, 86, 117) 藏青色, 配白
