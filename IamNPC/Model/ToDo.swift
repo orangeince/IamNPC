@@ -25,8 +25,6 @@ enum ToDoRepeatType: Int, IntegerLiteralConvertible {
             self = .Week
         case 3:
             self = .Month
-        case 4:
-            self = .Year
         default:
             self = .None
         }
