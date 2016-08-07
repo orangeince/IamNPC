@@ -1,5 +1,5 @@
 //
-//  NPCListViewController.swift
+//  NoviceVillageViewController.swift
 //  IamNPC
 //
 //  Created by 赵少龙 on 16/7/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NPCListViewController: npcTableViewController {
+class NoviceVillageViewController: npcTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

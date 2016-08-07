@@ -9,17 +9,150 @@
 import Foundation
 import RealmSwift
 
+class NPC: Object {
+    dynamic var uid: String = NSUUID().UUIDString
+    dynamic var name: String = ""
+    dynamic var avatar: String = ""
+    //var tasks = List<Task>()
+    let tasks = LinkingObjects(fromType: Task.self, property: "npc")
+    
+    override static func primaryKey() -> String? {
+        return "uid"
+    }
+}
+
+enum TaskAppearanceType: Int, IntegerLiteralConvertible {
+    case Once = 0
+    case Daily
+    case Weekly
+    case Mounthly
+    
+    init(integerLiteral value: Int) {
+        switch value {
+        case 0:
+            self = Once
+        case 1:
+            self = Daily
+        case 2:
+            self = Weekly
+        case 3:
+            self = Mounthly
+        default:
+            self = Once
+        }
+    }
+    
+    var description: String {
+        switch self {
+        case .Once:
+            return "仅一次"
+        case .Daily:
+            return "每天"
+        case .Weekly:
+            return "每周"
+        case .Mounthly:
+            return "每月"
+        }
+    }
+}
+
 class Task: Object {
     dynamic var uid: String = NSUUID().UUIDString
     dynamic var title: String = ""
     dynamic var content: String = ""
-    dynamic var tag: String = ""
-    dynamic var completedCount: Int = 0
-    dynamic var lastAssignTime: NSDate = NSDate()
-    dynamic var createAt: NSDate = NSDate()
+    dynamic var needCompletedCount: Int = 0         //在任务的周期内需要完成的次数
+    dynamic var appearance: Int = 0                 //任务出现的周期
+    dynamic var bonus: Float = 0.0                  //奖金
+    dynamic var createdBy: Int = 0                  //任务创建人
+    dynamic var assignTo: Int = 0                   //被指派人
+    //dynamic var status: Int = 0                     //状态 0-常态(可完成,可重复) 10-终结态(已完成)
+    dynamic var createdAt: NSDate = NSDate()
+    
+    dynamic var npc: NPC?
+    //let npcs = LinkingObjects(fromType: NPC.self, property: "tasks")
+    
+    var appearanceType: TaskAppearanceType {
+        return TaskAppearanceType(integerLiteral: appearance)
+    }
     
     override static func primaryKey() -> String? {
         return "uid"
     }
     
+    static func createTaskWith(data: [String: AnyObject]) {
+        let realm = try! Realm()
+        realm.npcWrite{
+            let task = realm.create(self, value: data, update: true)
+            TaskLifeCycle.pushTask(task)
+        }
+    }
+}
+
+class TaskLifeCycle: Object {
+    dynamic var uid: String = NSUUID().UUIDString
+    dynamic var id: Int = 0
+    dynamic var status: Int = 0                     //任务的状态 0-常态(生命周期可运转) 10-终结态
+    dynamic var reviveDate: NSDate = NSDate()       //任务的重生时间
+    dynamic var totalCompletedCount: Int = 0
+    dynamic var completedCount: Int = 0             //周期内任务的完成次数
+    dynamic var lastCompleteDate: NSDate = NSDate() //最后一次完成任务的时间
+    
+    var task: Task?
+    
+    static func pushTask(task: Task) {
+        let newItem = TaskLifeCycle()
+        let realm = try! Realm()
+        realm.npcWrite{
+            newItem.completedCount = task.needCompletedCount
+            newItem.task = task
+            newItem.metabolic()
+        }
+    }
+    
+    //新陈代谢，根据任务更新生命周期
+    func metabolic() {
+        guard let task = task where task.appearanceType != .Once && self.status == 0 else {
+            return
+        }
+        let now = NSDate()
+        //当前时间还没有到重生时间则不更新
+        if self.reviveDate.compare(now) == .OrderedDescending {
+            return
+        }
+        let realm = try! Realm()
+        realm.npcWrite{
+            self.completedCount = 0
+            switch task.appearanceType {
+            case .Daily:
+                self.reviveDate = now.tomorrow()
+            case .Weekly:
+                self.reviveDate = now.nextMonday()
+            case .Mounthly:
+                self.reviveDate = now.firstDayOfNextMonth()
+            default:
+                break
+            }
+        }
+    }
+    
+    var shouldAppear: Bool {
+        if status != 0 {
+            return false
+        }
+        metabolic()
+        if completedCount != task!.needCompletedCount {
+            return true
+        }
+        return false
+    }
+    
+}
+
+class DoneRecord: Object {
+    dynamic var uid: String = NSUUID().UUIDString
+    dynamic var id: Int = 0
+    dynamic var content: String = ""
+    dynamic var earned: Float = 0.0
+    dynamic var createdAt: NSDate = NSDate()
+    dynamic var task: Task?
 }

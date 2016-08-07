@@ -56,7 +56,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.11372549019607843" green="0.13333333333333333" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.18431372549019609" green="0.70980392156862748" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
