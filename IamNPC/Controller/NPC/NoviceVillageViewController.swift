@@ -10,25 +10,35 @@ import UIKit
 
 class NoviceVillageViewController: npcTableViewController {
 
+    var dataSource: [(NPC, [TaskLifeCycle])] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView(iTableView) {
-            
+            self.iTableView.tableHeaderView = TimeDescriptionHeaderView.loadFromNib("TimeDescriptionHeaderView") as? TimeDescriptionHeaderView
         }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
     }
     
     // MARK: TableView DataSource & Delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return dataSource.count
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 0 {
-            let header = TimeDescriptionHeaderView.loadFromNib("TimeDescriptionHeaderView") as! TimeDescriptionHeaderView
-            return header
-        }
-        return nil
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource[section].1.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        //let npc = dataSource[indexPath.section]
+        let taskLifeCycle = dataSource[indexPath.section].1[indexPath.row]
+        cell.textLabel?.text = taskLifeCycle.task!.content
+        return cell
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -37,6 +47,13 @@ class NoviceVillageViewController: npcTableViewController {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
+    }
+    
+    
+    // Class Methods
+    func loadData() {
+        dataSource = TaskLifeCycle.allNPCTaskOfToday()
+        iTableView.reloadData()
     }
 
 }

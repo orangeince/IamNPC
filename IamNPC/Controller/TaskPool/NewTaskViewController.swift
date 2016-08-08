@@ -253,12 +253,9 @@ class NewTaskViewController: npcTableViewController, LabelWithTextFieldCellDeleg
     
     func pickedAppearanceType(type: TaskAppearanceType, atIndex: NSIndexPath) {
         let content = datasource[atIndex.section][atIndex.row]
-        switch content {
-        case .AppearanceType(_):
+        if case .AppearanceType(_) = content {
             datasource[atIndex.section][atIndex.row] = RowContentType.AppearanceType(type)
             iTableView.reloadRowsAtIndexPaths([atIndex], withRowAnimation: .Automatic)
-        default:
-            break
         }
     }
 }

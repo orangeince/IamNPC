@@ -8,24 +8,24 @@
         <!--大白兔(NPC)-->
         <scene sceneID="pEh-vo-zCE">
             <objects>
-                <viewController storyboardIdentifier="NoviceVillageViewController" title="大白兔(NPC)" automaticallyAdjustsScrollViewInsets="NO" id="1Vd-O7-zss" customClass="NoviceVillageViewController" customModule="IamNPC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoviceVillageViewController" title="大白兔(NPC)" id="1Vd-O7-zss" customClass="NoviceVillageViewController" customModule="IamNPC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yvZ-fI-vhM"/>
                         <viewControllerLayoutGuide type="bottom" id="scA-EG-Rfh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x4k-az-Bcp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="120" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Cmh-LI-hIm">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.96278044870000001" green="0.96278044870000001" blue="0.96278044870000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NPCCell" id="5E8-Mc-uKH">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5E8-Mc-uKH" id="edO-Wf-o1y">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ime-5q-YvR">
@@ -70,6 +70,7 @@
                             <constraint firstAttribute="trailing" secondItem="Cmh-LI-hIm" secondAttribute="trailing" id="kgR-Vi-YcL"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="iTableView" destination="Cmh-LI-hIm" id="TkM-Bs-dFO"/>
                     </connections>

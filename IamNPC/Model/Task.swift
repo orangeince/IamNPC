@@ -146,6 +146,22 @@ class TaskLifeCycle: Object {
         return false
     }
     
+    // TODO: 没有调通。。
+    class func allNPCTaskOfToday() -> [(NPC, [TaskLifeCycle])] {
+        let realm = try! Realm()
+        var dict: [NPC: [TaskLifeCycle]] = [:]
+        realm.objects(self).filter("status == 0").forEach{
+            lifeCycle in
+            if lifeCycle.shouldAppear {
+                let npc = lifeCycle.task!.npc!
+                var arr = dict[npc] ?? []
+                arr.append(lifeCycle)
+                dict[npc] = arr
+            }
+        }
+        return dict.map{$0}
+    }
+    
 }
 
 class DoneRecord: Object {
