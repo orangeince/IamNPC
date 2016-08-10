@@ -35,6 +35,9 @@ class npcTableViewController: UIViewController, UITableViewDelegate, UITableView
         _tableView = tableView
         _tableView?.dataSource = self
         _tableView?.delegate = self
+        if _tableView?.style == .Plain {
+            _tableView?.tableFooterView = UIView(frame: CGRectZero)
+        }
         closure()
     }
     

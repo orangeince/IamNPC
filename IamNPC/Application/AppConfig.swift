@@ -12,6 +12,7 @@ enum MainBoard: String {
     case Main
     case NPC
     case ToDo
+    case TaskPool
     case Wallet
 }
 
