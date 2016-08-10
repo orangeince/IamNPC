@@ -97,15 +97,16 @@ class TaskLifeCycle: Object {
     dynamic var completedCount: Int = 0             //周期内任务的完成次数
     dynamic var lastCompleteDate: NSDate = NSDate() //最后一次完成任务的时间
     
-    var task: Task?
+    dynamic var task: Task?
     
     static func pushTask(task: Task) {
         let newItem = TaskLifeCycle()
         let realm = try! Realm()
         realm.npcWrite{
-            newItem.completedCount = task.needCompletedCount
+            newItem.totalCompletedCount = task.needCompletedCount
             newItem.task = task
             newItem.metabolic()
+            realm.add(newItem)
         }
     }
     

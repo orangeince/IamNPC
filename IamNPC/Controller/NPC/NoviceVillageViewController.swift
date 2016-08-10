@@ -8,14 +8,14 @@
 
 import UIKit
 
-class NoviceVillageViewController: npcTableViewController {
+class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
 
     var dataSource: [(NPC, [TaskLifeCycle])] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTableView(iTableView) {
-            self.iTableView.tableHeaderView = TimeDescriptionHeaderView.loadFromNib("TimeDescriptionHeaderView") as? TimeDescriptionHeaderView
+            //self.iTableView.tableHeaderView = TimeDescriptionHeaderView.loadFromNib("TimeDescriptionHeaderView") as? TimeDescriptionHeaderView
         }
     }
     
@@ -34,21 +34,25 @@ class NoviceVillageViewController: npcTableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        //let npc = dataSource[indexPath.section]
+        let cell = tableView.dequeueReusableCellWithIdentifier("NPCTaskCell") as! NPCTaskCell
         let taskLifeCycle = dataSource[indexPath.section].1[indexPath.row]
-        cell.textLabel?.text = taskLifeCycle.task!.content
+        cell.setupWith(NPCTaskCellViewModel(taskLifeCycle: taskLifeCycle), delegate: self)
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 32.0
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let npc = dataSource[section].0
+        return npc.name
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 60
+        return 80
     }
     
+    // MARK: NPCTaskCellDelegate 
+    func actionForDoneBtnTapped(cell: NPCTaskCell) {
+        print("点击完成任务")
+    }
     
     // Class Methods
     func loadData() {

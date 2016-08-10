@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A2664651D5B766E00B915E6 /* NPCTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */; };
 		2A5CA97C1D52316F004D03B9 /* npcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA96F1D52316F004D03B9 /* npcTableViewController.swift */; };
 		2A5CA97D1D52316F004D03B9 /* NoviceVillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA9711D52316F004D03B9 /* NoviceVillageViewController.swift */; };
 		2A5CA97E1D52316F004D03B9 /* ImNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA9731D52316F004D03B9 /* ImNNavigationController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NPCTaskCell.swift; path = NPC/NPCTaskCell.swift; sourceTree = "<group>"; };
 		2A5CA96F1D52316F004D03B9 /* npcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = npcTableViewController.swift; sourceTree = "<group>"; };
 		2A5CA9711D52316F004D03B9 /* NoviceVillageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoviceVillageViewController.swift; sourceTree = "<group>"; };
 		2A5CA9731D52316F004D03B9 /* ImNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImNNavigationController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				2A5CA98A1D5231A3004D03B9 /* Components */,
+				2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				2AB6C15E1D57468E0084F73E /* Utils.swift in Sources */,
 				2AB6C15C1D5715E60084F73E /* NPCNavigationController.swift in Sources */,
 				2A5CA99C1D5231EA004D03B9 /* TaskPoolViewController.swift in Sources */,
+				2A2664651D5B766E00B915E6 /* NPCTaskCell.swift in Sources */,
 				2A5CA9A71D52320A004D03B9 /* Extensions.swift in Sources */,
 				2AB6C1601D577ECA0084F73E /* NPCListViewController.swift in Sources */,
 				2A5CA9881D523185004D03B9 /* ToDo.swift in Sources */,
@@ -574,7 +578,7 @@
 				INFOPLIST_FILE = IamNPC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.orangeince.IamNPC;
+				PRODUCT_BUNDLE_IDENTIFIER = orangeince.IamNPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -590,7 +594,7 @@
 				INFOPLIST_FILE = IamNPC/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.orangeince.IamNPC;
+				PRODUCT_BUNDLE_IDENTIFIER = orangeince.IamNPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
