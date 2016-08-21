@@ -9,8 +9,9 @@
 import UIKit
 
 protocol NPCTaskCellDelegate: class {
-    func actionForDoneBtnTapped(cell: NPCTaskCell)
+    func npcTaskCell(cell: NPCTaskCell, commitTaskAtIndex: Int)
 }
+
 protocol NPCTaskCellDataSource {
     var content: String {get}
     var bonus: Float {get}
@@ -18,52 +19,34 @@ protocol NPCTaskCellDataSource {
     var appearanceType: TaskAppearanceType {get}
 }
 
-struct NPCTaskCellViewModel: NPCTaskCellDataSource {
-    var taskLifeCycle: TaskLifeCycle
-    init(taskLifeCycle: TaskLifeCycle) {
-        self.taskLifeCycle = taskLifeCycle
-    }
-    
-    var content: String {
-        return taskLifeCycle.task!.content
-    }
-    
-    var bonus: Float {
-        return taskLifeCycle.task!.bonus
-    }
-    
-    var completedCountDesp: String {
-        return "\(taskLifeCycle.completedCount)/\(taskLifeCycle.totalCompletedCount)"
-    }
-    
-    var appearanceType: TaskAppearanceType {
-        return taskLifeCycle.task!.appearanceType
-    }
-}
+class NPCTaskCell: UITableViewCell, TaskCardCollectionViewDelegate {
 
-class NPCTaskCell: UITableViewCell {
-
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var bonusLabel: UILabel!
-    @IBOutlet weak var completedCountLabel: UILabel!
-    @IBOutlet weak var appearanceTypeLabel: UILabel!
-    @IBOutlet weak var doneBtn: UIButton!
     weak var delegate: NPCTaskCellDelegate?
+    var taskModels: [NPCTaskCellViewModel] {
+        get {
+            return taskCardCollectionView.taskModels
+        }
+        set {
+            taskCardCollectionView.taskModels = newValue
+            taskCardCollectionView.reloadData()
+        }
+    }
+    @IBOutlet weak var taskCardCollectionView: TaskCardCollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        taskCardCollectionView.delegate = self
+    }
+
+    // MARK: TaskCardCollectionViewDelegate
+    func taskCardCollectionView(collectionView: TaskCardCollectionView, commitTaskAtIndex idx: Int) {
+        delegate?.npcTaskCell(self, commitTaskAtIndex: idx)
     }
     
-    func setupWith(dataSource: NPCTaskCellDataSource, delegate: NPCTaskCellDelegate) {
-        self.delegate = delegate
-        contentLabel.text = dataSource.content
-        bonusLabel.text = String(format: "¥%.2f", dataSource.bonus)
-        completedCountLabel.text = dataSource.completedCountDesp
-        appearanceTypeLabel.text = dataSource.appearanceType.description
+    func removeItemAt(index: Int) {
+        taskCardCollectionView.removeItemAt(index)
     }
-
-    @IBAction func doneBtnTapped(sender: AnyObject) {
-        delegate?.actionForDoneBtnTapped(self)
+    func updateItemAt(index: Int) {
+        taskCardCollectionView.updateItemAt(index)
     }
-
 }

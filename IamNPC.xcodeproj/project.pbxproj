@@ -36,6 +36,9 @@
 		2AB6C1621D57838F0084F73E /* NewNPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6C1611D57838F0084F73E /* NewNPCViewController.swift */; };
 		2AB6CD261D3E5C0900DD6F1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AB6CD251D3E5C0900DD6F1D /* Assets.xcassets */; };
 		2AB6CD341D3E5C0900DD6F1D /* IamNPCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB6CD331D3E5C0900DD6F1D /* IamNPCTests.swift */; };
+		2AC534181D634D310019CBC1 /* TaskCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC534171D634D310019CBC1 /* TaskCardCollectionView.swift */; };
+		2AC5341B1D634E8C0019CBC1 /* TaskCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC534191D634E8C0019CBC1 /* TaskCardCell.swift */; };
+		2AC5341C1D634E8C0019CBC1 /* TaskCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC5341A1D634E8C0019CBC1 /* TaskCardCell.xib */; };
 		4C0887F6E08373DA5B284C2C /* Pods_IamNPC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC51DCFA5B496C056974FE3 /* Pods_IamNPC.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		2AB6CD2F1D3E5C0900DD6F1D /* IamNPCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IamNPCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB6CD331D3E5C0900DD6F1D /* IamNPCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IamNPCTests.swift; sourceTree = "<group>"; };
 		2AB6CD351D3E5C0900DD6F1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AC534171D634D310019CBC1 /* TaskCardCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskCardCollectionView.swift; path = NoviceVillage/TaskCardCollectionView.swift; sourceTree = "<group>"; };
+		2AC534191D634E8C0019CBC1 /* TaskCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskCardCell.swift; path = NoviceVillage/TaskCardCell.swift; sourceTree = "<group>"; };
+		2AC5341A1D634E8C0019CBC1 /* TaskCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCardCell.xib; path = NoviceVillage/TaskCardCell.xib; sourceTree = "<group>"; };
 		396BD1800AD91978C947BF9C /* Pods-IamNPC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IamNPC.release.xcconfig"; path = "Pods/Target Support Files/Pods-IamNPC/Pods-IamNPC.release.xcconfig"; sourceTree = "<group>"; };
 		60BCD124A7B734859672E473 /* Pods-IamNPC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IamNPC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IamNPC/Pods-IamNPC.debug.xcconfig"; sourceTree = "<group>"; };
 		CDC51DCFA5B496C056974FE3 /* Pods_IamNPC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IamNPC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,8 +180,8 @@
 		2A5CA9891D5231A3004D03B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2AC534141D634CAA0019CBC1 /* NoviceVillage */,
 				2A5CA98A1D5231A3004D03B9 /* Components */,
-				2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -274,6 +280,17 @@
 				2AB6CD351D3E5C0900DD6F1D /* Info.plist */,
 			);
 			path = IamNPCTests;
+			sourceTree = "<group>";
+		};
+		2AC534141D634CAA0019CBC1 /* NoviceVillage */ = {
+			isa = PBXGroup;
+			children = (
+				2AC534171D634D310019CBC1 /* TaskCardCollectionView.swift */,
+				2AC534191D634E8C0019CBC1 /* TaskCardCell.swift */,
+				2AC5341A1D634E8C0019CBC1 /* TaskCardCell.xib */,
+				2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */,
+			);
+			name = NoviceVillage;
 			sourceTree = "<group>";
 		};
 		BC64DA63D57002B084911467 /* Pods */ = {
@@ -376,6 +393,7 @@
 				2AB6CD261D3E5C0900DD6F1D /* Assets.xcassets in Resources */,
 				2A5CA98E1D5231A3004D03B9 /* TimeDescriptionHeaderView.xib in Resources */,
 				2A5CA9961D5231AB004D03B9 /* Main.storyboard in Resources */,
+				2AC5341C1D634E8C0019CBC1 /* TaskCardCell.xib in Resources */,
 				2AB6C1581D570B5E0084F73E /* TaskPool.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +464,7 @@
 				2A5CA9A81D52320A004D03B9 /* ThirdLibExtensions.swift in Sources */,
 				2A5CA97E1D52316F004D03B9 /* ImNNavigationController.swift in Sources */,
 				2A5CA99F1D5231FD004D03B9 /* Constants.swift in Sources */,
+				2AC5341B1D634E8C0019CBC1 /* TaskCardCell.swift in Sources */,
 				2A5CA98D1D5231A3004D03B9 /* TimeDescriptionHeaderView.swift in Sources */,
 				2A5CA9A61D52320A004D03B9 /* AppDelegate.swift in Sources */,
 				2A5CA9A51D52320A004D03B9 /* AppConfig.swift in Sources */,
@@ -463,6 +482,7 @@
 				2A5CA9881D523185004D03B9 /* ToDo.swift in Sources */,
 				2A5CA97D1D52316F004D03B9 /* NoviceVillageViewController.swift in Sources */,
 				2A5CA9831D52316F004D03B9 /* WalletViewController.swift in Sources */,
+				2AC534181D634D310019CBC1 /* TaskCardCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

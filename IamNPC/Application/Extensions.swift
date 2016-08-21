@@ -48,3 +48,9 @@ extension NSDate {
     }
 }
 
+extension UIColor {
+    static func RGB(r: CGFloat, _ g: CGFloat, _ b: CGFloat, _ alpha: CGFloat = 1.0) -> UIColor {
+        return UIColor(red: r / 255.0, green: g / 255.0, blue: b / 255.0, alpha: alpha)
+    }
+}
+

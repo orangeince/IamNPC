@@ -30,13 +30,16 @@ class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource[section].1.count
+        return 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NPCTaskCell") as! NPCTaskCell
-        let taskLifeCycle = dataSource[indexPath.section].1[indexPath.row]
-        cell.setupWith(NPCTaskCellViewModel(taskLifeCycle: taskLifeCycle), delegate: self)
+        let taskModels = dataSource[indexPath.section].1.map{NPCTaskCellViewModel(taskLifeCycle:$0)}
+        cell.taskModels = taskModels
+        cell.delegate = self
+        //let taskLifeCycle = dataSource[indexPath.section].1[indexPath.row]
+        //cell.setupWith(NPCTaskCellViewModel(taskLifeCycle: taskLifeCycle), delegate: self)
         return cell
     }
     
@@ -46,12 +49,23 @@ class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
+        return 260
     }
     
-    // MARK: NPCTaskCellDelegate 
-    func actionForDoneBtnTapped(cell: NPCTaskCell) {
-        print("点击完成任务")
+    // MARK: NPCTaskCellDelegate
+    func npcTaskCell(cell: NPCTaskCell, commitTaskAtIndex idx: Int) {
+        if let indexPath = iTableView.indexPathForCell(cell) {
+            var data = dataSource[indexPath.section]
+            let taskLifeCycle = data.1[idx]
+            taskLifeCycle.commitTask()
+            if !taskLifeCycle.shouldAppear {
+                data.1.removeAtIndex(idx)
+                dataSource[indexPath.section] = data
+                cell.removeItemAt(idx)
+            } else {
+                cell.updateItemAt(idx)
+            }
+        }
     }
     
     // Class Methods

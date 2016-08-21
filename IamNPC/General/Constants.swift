@@ -16,6 +16,7 @@ let UserDefaults = NSUserDefaults.standardUserDefaults()
 let Bundle = NSBundle.mainBundle()
 let MainScreen = UIScreen.mainScreen()
 let DefaultNotificationCenter = NSNotificationCenter.defaultCenter()
+let mainUser = User.mainUser
 
 let purpleColor = UIColor(red: 255/255, green: 22/255, blue: 93/255, alpha: 1)
 let lightBlueColor = UIColor(red: 62/255, green: 193/255, blue: 211/255, alpha: 1)

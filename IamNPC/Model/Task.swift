@@ -54,6 +54,32 @@ enum TaskAppearanceType: Int, IntegerLiteralConvertible {
             return "每月"
         }
     }
+    
+    var shortDesp: String {
+        switch self {
+        case .Once:
+            return "一"
+        case .Daily:
+            return "天"
+        case .Weekly:
+            return "周"
+        case .Mounthly:
+            return "月"
+        }
+    }
+    
+    var tintColor: UIColor {
+        switch self {
+        case .Once:
+            return UIColor.RGB(203, 10, 69)
+        case .Daily:
+            return UIColor.RGB(149, 225, 211)
+        case .Weekly:
+            return UIColor.RGB(243, 129, 129)
+        case .Mounthly:
+            return UIColor.RGB(229, 104, 45)
+        }
+    }
 }
 
 class Task: Object {
@@ -103,7 +129,7 @@ class TaskLifeCycle: Object {
         let newItem = TaskLifeCycle()
         let realm = try! Realm()
         realm.npcWrite{
-            newItem.totalCompletedCount = task.needCompletedCount
+            //newItem.totalCompletedCount = task.needCompletedCount
             newItem.task = task
             newItem.metabolic()
             realm.add(newItem)
@@ -141,13 +167,16 @@ class TaskLifeCycle: Object {
             return false
         }
         metabolic()
-        if completedCount != task!.needCompletedCount {
+        if completedCount < task!.needCompletedCount {
             return true
         }
         return false
     }
     
-    // TODO: 没有调通。。
+    var completedCountDescription: String {
+        return "\(completedCount)/\(task!.needCompletedCount)"
+    }
+    
     class func allNPCTaskOfToday() -> [(NPC, [TaskLifeCycle])] {
         let realm = try! Realm()
         var dict: [NPC: [TaskLifeCycle]] = [:]
@@ -163,6 +192,24 @@ class TaskLifeCycle: Object {
         return dict.map{$0}
     }
     
+    func commitTask() {
+        let realm = try! Realm()
+        realm.npcWrite{
+            self.completedCount += 1
+            self.totalCompletedCount += 1
+            self.lastCompleteDate = NSDate()
+            let doneRecord = realm.create(DoneRecord.self)
+            doneRecord.content = self.task!.content
+            doneRecord.task = self.task
+            doneRecord.user = mainUser
+            doneRecord.summary = "当前完成情况: \(self.completedCount)/\(self.task!.needCompletedCount)"
+            if self.completedCount == self.task!.needCompletedCount {
+                doneRecord.earned = self.task!.bonus
+                mainUser.earned += self.task!.bonus
+            }
+        }
+    }
+    
 }
 
 class DoneRecord: Object {
@@ -172,4 +219,6 @@ class DoneRecord: Object {
     dynamic var earned: Float = 0.0
     dynamic var createdAt: NSDate = NSDate()
     dynamic var task: Task?
+    dynamic var user: User?
+    dynamic var summary: String = "" //备注信息，目前用于表示当前是第几次完成任务。如果任务要求完成3次之后才给奖励，这个就可以表示啦
 }
