@@ -13,3 +13,10 @@ func alertWith(title: String, inContainer: UIViewController) {
     alert.addAction(UIAlertAction(title: "好的", style: .Cancel, handler: nil))
     inContainer.presentViewController(alert, animated: true, completion: nil)
 }
+
+func getDateDescription(date: NSDate) -> String {
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    dateFormatter.locale = NSLocale.currentLocale()
+    return dateFormatter.stringFromDate(date)
+}

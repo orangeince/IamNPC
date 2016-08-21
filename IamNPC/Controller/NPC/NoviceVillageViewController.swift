@@ -9,6 +9,7 @@
 import UIKit
 
 class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
+    @IBOutlet weak var infoView: UIView!
 
     var dataSource: [(NPC, [TaskLifeCycle])] = []
     override func viewDidLoad() {
@@ -62,6 +63,9 @@ class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
                 data.1.removeAtIndex(idx)
                 dataSource[indexPath.section] = data
                 cell.removeItemAt(idx)
+                if data.1.count <= 1 {
+                    updateInfoView()
+                }
             } else {
                 cell.updateItemAt(idx)
             }
@@ -72,6 +76,21 @@ class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
     func loadData() {
         dataSource = TaskLifeCycle.allNPCTaskOfToday()
         iTableView.reloadData()
+        updateInfoView()
+    }
+    
+    func updateInfoView() {
+        if dataSource.isEmpty {
+            infoView.hidden = false
+            return
+        }
+        for data in dataSource {
+            if !data.1.isEmpty {
+                infoView.hidden = true
+                return
+            }
+        }
+        infoView.hidden = false
     }
 
 }

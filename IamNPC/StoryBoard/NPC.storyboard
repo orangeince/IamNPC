@@ -45,18 +45,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="teX-tt-cRi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天已经没有可以接收的任务了哦&gt;.&lt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVu-to-flk">
+                                        <rect key="frame" x="59.5" y="323.5" width="255" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="LVu-to-flk" firstAttribute="centerX" secondItem="teX-tt-cRi" secondAttribute="centerX" id="U7H-AV-xdF"/>
+                                    <constraint firstItem="LVu-to-flk" firstAttribute="centerY" secondItem="teX-tt-cRi" secondAttribute="centerY" id="mcH-Lx-HP4"/>
+                                    <constraint firstItem="LVu-to-flk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="teX-tt-cRi" secondAttribute="leading" constant="59.5" id="uGw-h1-TPz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="scA-EG-Rfh" firstAttribute="top" secondItem="Cmh-LI-hIm" secondAttribute="bottom" id="00G-q4-Bxf"/>
+                            <constraint firstItem="teX-tt-cRi" firstAttribute="leading" secondItem="x4k-az-Bcp" secondAttribute="leading" id="B47-vf-z2w"/>
+                            <constraint firstItem="teX-tt-cRi" firstAttribute="top" secondItem="x4k-az-Bcp" secondAttribute="top" id="Ea7-Qs-sqi"/>
                             <constraint firstItem="Cmh-LI-hIm" firstAttribute="top" secondItem="yvZ-fI-vhM" secondAttribute="bottom" id="QTa-95-VV1"/>
+                            <constraint firstAttribute="trailing" secondItem="teX-tt-cRi" secondAttribute="trailing" id="TSH-iN-mjm"/>
                             <constraint firstItem="Cmh-LI-hIm" firstAttribute="leading" secondItem="x4k-az-Bcp" secondAttribute="leading" id="UAp-Vv-02F"/>
                             <constraint firstAttribute="trailing" secondItem="Cmh-LI-hIm" secondAttribute="trailing" id="kgR-Vi-YcL"/>
+                            <constraint firstItem="scA-EG-Rfh" firstAttribute="top" secondItem="teX-tt-cRi" secondAttribute="bottom" id="xRw-h0-GWs"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="iTableView" destination="Cmh-LI-hIm" id="TkM-Bs-dFO"/>
+                        <outlet property="infoView" destination="teX-tt-cRi" id="iQa-S9-LWY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ln2-D5-P5T" userLabel="First Responder" sceneMemberID="firstResponder"/>

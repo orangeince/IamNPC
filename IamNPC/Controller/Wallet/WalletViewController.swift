@@ -7,29 +7,89 @@
 //
 
 import UIKit
+import RealmSwift
 
-class WalletViewController: UIViewController {
+class WalletProfileCell: UITableViewCell {
+    
+    @IBOutlet weak var earnedLabel: UILabel!
+    
+}
+
+class WalletViewController: npcTableViewController {
+    
+    var doneRecords: [DoneRecord] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        setupTableView(iTableView) {
+            
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
     }
-    */
-
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return doneRecords.isEmpty ? 1 : 2
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return doneRecords.count
+        }
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("WalletProfileCell") as! WalletProfileCell
+            cell.earnedLabel.text = String(format: "已挣得：¥%.2f", mainUser.earned)
+            return cell
+        } else {
+            let cell: UITableViewCell
+            if let c = tableView.dequeueReusableCellWithIdentifier("DoneRecordCell") {
+                cell = c
+            } else {
+                cell = UITableViewCell(style: .Value1, reuseIdentifier: "DoneRecordCell")
+            }
+            let record = doneRecords[indexPath.row]
+            cell.textLabel?.text = record.content
+            cell.detailTextLabel?.text = getDateDescription(record.createdAt)
+            
+            return cell
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0.1
+        } else {
+            return 18
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 1 {
+            return "已完成任务列表"
+        }
+        return nil
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 160
+        } else {
+            return 44
+        }
+    }
+    
+    func loadData() {
+        let realm = try! Realm()
+        doneRecords = realm.objects(DoneRecord.self).sorted("createdAt", ascending: false).map{$0}
+        iTableView.reloadData()
+    }
 }

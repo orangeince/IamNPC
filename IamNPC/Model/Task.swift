@@ -71,7 +71,7 @@ enum TaskAppearanceType: Int, IntegerLiteralConvertible {
     var tintColor: UIColor {
         switch self {
         case .Once:
-            return UIColor.RGB(203, 10, 69)
+            return UIColor.RGB(121, 168, 169)
         case .Daily:
             return UIColor.RGB(149, 225, 211)
         case .Weekly:

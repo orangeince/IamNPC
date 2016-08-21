@@ -7,20 +7,69 @@
         <!--Wallet-->
         <scene sceneID="MI9-Ss-Rv0">
             <objects>
-                <viewController storyboardIdentifier="WalletViewController" title="Wallet" id="E9a-s3-UC5" customClass="WalletViewController" customModule="IamNPC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletViewController" title="Wallet" automaticallyAdjustsScrollViewInsets="NO" id="E9a-s3-UC5" customClass="WalletViewController" customModule="IamNPC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oBo-Ea-Ggw"/>
                         <viewControllerLayoutGuide type="bottom" id="pc7-xq-tG4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2Fv-8a-p8I">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TIh-Jc-Y7h">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WalletProfileCell" rowHeight="160" id="Jgc-Zb-fvQ" customClass="WalletProfileCell" customModule="IamNPC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jgc-Zb-fvQ" id="JsV-bG-YOb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已挣得: ¥100.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnd-p2-XPt">
+                                                    <rect key="frame" x="130.5" y="69" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.73725490199999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wnd-p2-XPt" firstAttribute="centerX" secondItem="JsV-bG-YOb" secondAttribute="centerX" id="UhE-22-cZ5"/>
+                                                <constraint firstItem="wnd-p2-XPt" firstAttribute="centerY" secondItem="JsV-bG-YOb" secondAttribute="centerY" id="kXB-ci-NX6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="earnedLabel" destination="wnd-p2-XPt" id="s9Z-e1-vq6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="82" id="p9Y-4r-Jp5">
+                                        <rect key="frame" x="0.0" y="209.5" width="375" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p9Y-4r-Jp5" id="RJw-P1-qBt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TIh-Jc-Y7h" secondAttribute="trailing" id="8fw-L7-abq"/>
+                            <constraint firstItem="TIh-Jc-Y7h" firstAttribute="leading" secondItem="2Fv-8a-p8I" secondAttribute="leading" id="KHO-9C-9n3"/>
+                            <constraint firstItem="TIh-Jc-Y7h" firstAttribute="top" secondItem="oBo-Ea-Ggw" secondAttribute="bottom" id="URW-Kk-JHA"/>
+                            <constraint firstItem="pc7-xq-tG4" firstAttribute="top" secondItem="TIh-Jc-Y7h" secondAttribute="bottom" id="gja-jX-mkb"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="iTableView" destination="TIh-Jc-Y7h" id="oi8-qc-3OH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UL1-Qu-aTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="347" y="407"/>
+            <point key="canvasLocation" x="346.5" y="406.5"/>
         </scene>
     </scenes>
 </document>
