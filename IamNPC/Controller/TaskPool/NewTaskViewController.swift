@@ -13,21 +13,31 @@ protocol LabelWithTextFieldCellDelegate: class {
     func actionForInput(text: String, atIndex: NSIndexPath)
 }
 
+enum TextFieldInputType {
+    case Number
+    case Decimal
+    case Text
+}
 class LabelWithTextFieldCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var label: UILabel!
     var indexPath: NSIndexPath!
+    var inputType = TextFieldInputType.Text
     weak var delegate: LabelWithTextFieldCellDelegate?
     
     func setupCellWith(title: String, count: Int?, atIndex: NSIndexPath, delegate: LabelWithTextFieldCellDelegate) {
         let  content = String(count ?? 1)
         textField.keyboardType = .NumberPad
+        inputType = .Number
+        textField.clearButtonMode = .Never
         setupCellWith(title, content: content, atIndex: atIndex, delegate: delegate)
         
     }
     func setupCellWith(title: String, bonus: Float?, atIndex: NSIndexPath, delegate: LabelWithTextFieldCellDelegate) {
-        let content = String(format: "%.2f", bonus ?? 0.0)
+        let content = String(format: "%.1f", bonus ?? 0)
         textField.keyboardType = .DecimalPad
+        inputType = .Decimal
+        textField.clearButtonMode = .Never
         textField.textColor = UIColor.orangeColor()
         setupCellWith(title, content: content, atIndex: atIndex, delegate: delegate)
     }
@@ -41,6 +51,13 @@ class LabelWithTextFieldCell: UITableViewCell, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
+        if (textField.text ?? "").isEmpty {
+            if inputType == .Number {
+                textField.text = "1"
+            } else if inputType == .Decimal {
+                textField.text = "0"
+            }
+        }
         delegate?.actionForInput(textField.text!, atIndex: indexPath)
     }
 }
