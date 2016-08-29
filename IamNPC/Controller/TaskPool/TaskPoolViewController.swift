@@ -81,6 +81,28 @@ class TaskPoolViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 72
     }
+    
+    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return .Delete
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let alert = UIAlertController(title: "确定要删除任务吗", message: nil, preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "取消", style: .Cancel, handler: nil))
+            let deleteAction = UIAlertAction(title: "确定", style: .Default, handler: {
+                [weak self](action) in
+                if let weakSelf = self {
+                    let task = weakSelf.tasks[indexPath.row]
+                    Task.remove(task)
+                    weakSelf.tasks.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Left)
+                }
+            })
+            alert.addAction(deleteAction)
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
    
     // MARK: Class Methods
     func loadData() {

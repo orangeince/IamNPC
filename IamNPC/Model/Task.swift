@@ -96,6 +96,7 @@ class Task: Object {
     
     dynamic var npc: NPC?
     //let npcs = LinkingObjects(fromType: NPC.self, property: "tasks")
+    let lifeCycle = LinkingObjects(fromType: TaskLifeCycle.self, property: "task")
     
     var appearanceType: TaskAppearanceType {
         return TaskAppearanceType(integerLiteral: appearance)
@@ -110,6 +111,16 @@ class Task: Object {
         realm.npcWrite{
             let task = realm.create(self, value: data, update: true)
             TaskLifeCycle.pushTask(task)
+        }
+    }
+    
+    static func remove(task: Task) {
+        let realm = try! Realm()
+        realm.npcWrite{
+            if let lifeCycle = task.lifeCycle.first {
+                TaskLifeCycle.remove(lifeCycle)
+            }
+            realm.delete(task)
         }
     }
 }
@@ -207,6 +218,13 @@ class TaskLifeCycle: Object {
                 doneRecord.earned = self.task!.bonus
                 mainUser.earned += self.task!.bonus
             }
+        }
+    }
+    
+    static func remove(liftCycle: TaskLifeCycle) {
+        let realm = try! Realm()
+        realm.npcWrite{
+            realm.delete(liftCycle)
         }
     }
     
