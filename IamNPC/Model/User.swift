@@ -25,7 +25,9 @@ class User: Object {
                 if let user = realm.objects(self).first {
                     _mainUser = user
                 } else {
-                    _mainUser = realm.create(self, value: ["name": "BigOrange", "id": -1])
+                    realm.npcWrite {
+                        _mainUser = realm.create(self, value: ["name": "BigOrange", "id": -1])
+                    }
                 }
             }
             return _mainUser!

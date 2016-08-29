@@ -43,14 +43,6 @@
                                             <outlet property="earnedLabel" destination="wnd-p2-XPt" id="s9Z-e1-vq6"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="82" id="p9Y-4r-Jp5">
-                                        <rect key="frame" x="0.0" y="209.5" width="375" height="82"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p9Y-4r-Jp5" id="RJw-P1-qBt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

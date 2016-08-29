@@ -34,7 +34,8 @@ class NewNPCViewController: UIViewController {
                 realm.create(NPC.self, value: ["name": name], update: false)
             }
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }
