@@ -63,7 +63,9 @@ class NoviceVillageViewController: npcTableViewController, NPCTaskCellDelegate {
                 data.1.removeAtIndex(idx)
                 dataSource[indexPath.section] = data
                 cell.removeItemAt(idx)
-                if data.1.count <= 1 {
+                if data.1.isEmpty {
+                    dataSource.removeAtIndex(indexPath.section)
+                    iTableView.deleteSections(NSIndexSet(index: indexPath.section), withRowAnimation: .Automatic)
                     updateInfoView()
                 }
             } else {

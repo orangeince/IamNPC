@@ -50,15 +50,11 @@ class WalletViewController: npcTableViewController {
             cell.earnedLabel.text = String(format: "已挣得：¥%.2f", mainUser.earned)
             return cell
         } else {
-            let cell: UITableViewCell
-            if let c = tableView.dequeueReusableCellWithIdentifier("DoneRecordCell") {
-                cell = c
-            } else {
-                cell = UITableViewCell(style: .Value1, reuseIdentifier: "DoneRecordCell")
-            }
+            let cell = tableView.dequeueReusableCellWithIdentifier("CompletedTaskListCell") as! CompletedTaskListCell
             let record = doneRecords[indexPath.row]
-            cell.textLabel?.text = record.content
-            cell.detailTextLabel?.text = getDateDescription(record.createdAt)
+            cell.contentLabel.text = record.content
+            cell.earnedLabel.text = String(format: "¥%.2f", mainUser.earned)
+            cell.timeLabel.text = getDateDescription(record.createdAt)
             
             return cell
         }
@@ -83,7 +79,7 @@ class WalletViewController: npcTableViewController {
         if indexPath.section == 0 {
             return 160
         } else {
-            return 44
+            return 64
         }
     }
     

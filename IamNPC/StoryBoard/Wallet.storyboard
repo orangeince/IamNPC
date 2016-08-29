@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Wallet-->
@@ -28,8 +29,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已挣得: ¥100.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnd-p2-XPt">
-                                                    <rect key="frame" x="130.5" y="69" width="113" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="119.5" y="67.5" width="135" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" red="0.98823529409999999" green="0.73725490199999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -41,6 +42,48 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="earnedLabel" destination="wnd-p2-XPt" id="s9Z-e1-vq6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CompletedTaskListCell" rowHeight="72" id="W6s-5Z-P3o" customClass="CompletedTaskListCell" customModule="IamNPC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="209.5" width="375" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W6s-5Z-P3o" id="0AT-TV-DWD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="任务名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUS-QC-7oE">
+                                                    <rect key="frame" x="16" y="8" width="68" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥10.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A0-4M-1u7">
+                                                    <rect key="frame" x="16" y="45.5" width="38" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.62519791579999995" blue="0.019425913919999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udH-4Z-smy">
+                                                    <rect key="frame" x="321.5" y="45.5" width="37.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="topMargin" secondItem="VUS-QC-7oE" secondAttribute="top" id="29p-LZ-xpB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="5A0-4M-1u7" secondAttribute="bottom" id="Bg4-pa-hFg"/>
+                                                <constraint firstItem="VUS-QC-7oE" firstAttribute="leading" secondItem="0AT-TV-DWD" secondAttribute="leadingMargin" constant="8" id="RYq-zh-7px"/>
+                                                <constraint firstItem="5A0-4M-1u7" firstAttribute="leading" secondItem="0AT-TV-DWD" secondAttribute="leadingMargin" constant="8" id="ZR6-tU-uqC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="udH-4Z-smy" secondAttribute="trailing" constant="8" id="d8i-1P-GMh"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="VUS-QC-7oE" secondAttribute="trailing" constant="8" id="f4f-iE-GUR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="udH-4Z-smy" secondAttribute="bottom" id="wgt-qA-2K3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="VUS-QC-7oE" id="ahb-zP-dMx"/>
+                                            <outlet property="earnedLabel" destination="5A0-4M-1u7" id="raC-4y-6Cd"/>
+                                            <outlet property="timeLabel" destination="udH-4Z-smy" id="pOP-cR-cf0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

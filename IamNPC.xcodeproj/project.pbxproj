@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A04F32D1D747AFD00272586 /* CompletedTaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A04F32C1D747AFD00272586 /* CompletedTaskListCell.swift */; };
 		2A2664651D5B766E00B915E6 /* NPCTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */; };
 		2A5CA97C1D52316F004D03B9 /* npcTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA96F1D52316F004D03B9 /* npcTableViewController.swift */; };
 		2A5CA97D1D52316F004D03B9 /* NoviceVillageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5CA9711D52316F004D03B9 /* NoviceVillageViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A04F32C1D747AFD00272586 /* CompletedTaskListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompletedTaskListCell.swift; path = Wallet/CompletedTaskListCell.swift; sourceTree = "<group>"; };
 		2A2664641D5B766E00B915E6 /* NPCTaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NPCTaskCell.swift; path = NPC/NPCTaskCell.swift; sourceTree = "<group>"; };
 		2A5CA96F1D52316F004D03B9 /* npcTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = npcTableViewController.swift; sourceTree = "<group>"; };
 		2A5CA9711D52316F004D03B9 /* NoviceVillageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoviceVillageViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2A04F32B1D747AC500272586 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				2A04F32C1D747AFD00272586 /* CompletedTaskListCell.swift */,
+			);
+			name = Wallet;
+			sourceTree = "<group>";
+		};
 		2A5CA96D1D52316F004D03B9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 		2A5CA9891D5231A3004D03B9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2A04F32B1D747AC500272586 /* Wallet */,
 				2AC534141D634CAA0019CBC1 /* NoviceVillage */,
 				2A5CA98A1D5231A3004D03B9 /* Components */,
 			);
@@ -470,6 +481,7 @@
 				2A5CA9A51D52320A004D03B9 /* AppConfig.swift in Sources */,
 				2AB6C1561D56F6600084F73E /* User.swift in Sources */,
 				2A5CA97C1D52316F004D03B9 /* npcTableViewController.swift in Sources */,
+				2A04F32D1D747AFD00272586 /* CompletedTaskListCell.swift in Sources */,
 				2A5CA9871D523185004D03B9 /* Task.swift in Sources */,
 				2A5CA97F1D52316F004D03B9 /* ViewController.swift in Sources */,
 				2AB6C1621D57838F0084F73E /* NewNPCViewController.swift in Sources */,
